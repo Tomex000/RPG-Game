@@ -8,7 +8,7 @@ namespace RPG
 {
     class Map
     {
-        int[,] tablica = new int[10,10];
+       public int[,] tablica = new int[10,10];
 
         public void Draw(int Hx, int Hy)   // arg to pozycja bohatera
         {

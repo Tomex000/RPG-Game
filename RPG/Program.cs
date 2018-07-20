@@ -12,11 +12,7 @@ namespace RPG
         {
             Game nowa = new Game();
 
-            nowa.Play();
-
-
-
-            
+            nowa.Play();                      
         }
     }
 }

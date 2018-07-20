@@ -6,46 +6,47 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Hero
+    public class Hero
     {
-        int x = 1, y = 1;
+        public int PositionX{ get; set;}
+        public int PositionY{ get; set;}
 
         public void Moveleft()
         {
-            if (x > 1)
+            if (PositionX > 1)
             {
-                x = x - 1;
+                PositionX--;
             }
             else
-                x = 1;
+                PositionX = 1;
         }
         public void MoveRight()
         {
-            if (x < 10)
+            if (PositionX < 10)
             {
-                x = x + 1;
+                PositionX++;
             }
             else
-                x = 10;
+                PositionX = 10;
         }
         public void MoveDown()
         {
-            if (y < 10)
+            if (PositionY < 10)
             {
-                y = y + 1;
+                PositionY++;
             }
             else
-                y = 10;
+                PositionY = 10;
         }
         public void MoveUp()
         {
-            if(y>1)
+            if(PositionY > 1)
             {
-                y = y - 1;
+                PositionY--;
             }
             else
             {
-                y = 1;
+                PositionY = 1;
             }
         }
     }

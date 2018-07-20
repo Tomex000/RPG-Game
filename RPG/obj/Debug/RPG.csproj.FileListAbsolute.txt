@@ -5,3 +5,10 @@ C:\Users\Tomek\source\repos\RPG\RPG\obj\Debug\RPG.csprojResolveAssemblyReference
 C:\Users\Tomek\source\repos\RPG\RPG\obj\Debug\RPG.csproj.CoreCompileInputs.cache
 C:\Users\Tomek\source\repos\RPG\RPG\obj\Debug\RPG.exe
 C:\Users\Tomek\source\repos\RPG\RPG\obj\Debug\RPG.pdb
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\bin\Debug\RPG.exe.config
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\bin\Debug\RPG.exe
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\bin\Debug\RPG.pdb
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\obj\Debug\RPG.csprojAssemblyReference.cache
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\obj\Debug\RPG.csproj.CoreCompileInputs.cache
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\obj\Debug\RPG.exe
+C:\Users\tkrzyzak\source\repos\RPG-Game-master\RPG\obj\Debug\RPG.pdb
