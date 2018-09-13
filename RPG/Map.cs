@@ -6,47 +6,76 @@ using System.Threading.Tasks;
 
 namespace RPG
 {
-    class Map
+    public class Wall : IDrawable
     {
-       public int[,] tablica = new int[10,10];
-
-        public void Draw(int Hx, int Hy)   // arg to pozycja bohatera
+        public Wall(int posX, int posY)
         {
+            this.posX = posX;
+            this.posY = posY;
+        }
+
+        // fields / members
+        private char marker = 'X';
+        private int posX;
+        private int posY;
+
+        // properties
+        public char Marker
+        {
+            get { return marker; }
+            set { marker = value; }
+        }
+
+        public int PositionX
+        {
+            get { return posX; }
+            set { posX = value; }
+        }
+
+        public int PositionY
+        {
+            get { return posY; }
+            set { posY = value; }
+        }
+    }
+
+    public class Map
+    {
+        List<IDrawable> MapObjs { get; set; }
+
+        public Map()
+        {
+            MapObjs = new List<IDrawable>();
+
+            for (int i = 0; i < 10; i++)
             {
-                int a, b = 0;
-                for (a = 1; a <= 11; a++)
+                for (int j = 0; j < 10; j++)
                 {
-                    for (b = 1; b <= 11; b++)
-
-                    {
-                        if (a == 1 || a == 11)
-                        {
-
-                            if (b >= 1 && b <= 11)
-                            {
-                                Console.Write("-");//krawedz gorna
-                            }
-                            else if (b == 1 || b == 11)
-                            {
-                                Console.Write("|");//krawedz boczna 
-                            }
-                        }
-                        else if (b == 1 || b == 11)
-                        {
-                            Console.Write("x");///naroza
-                        }
-                        else if (a == Hy && b == Hx)
-                        {
-                            Console.Write("o");//bohater
-                        }
-                        else
-                        {
-                            Console.Write(" ");
-                        }
-                    }
-                    Console.WriteLine();
+                    if (i == 0 || i == 9 || j == 0 || j == 9)
+                        MapObjs.Add(new Wall(i, j));
                 }
-                Console.ReadLine();
+            }
+        }
+
+        public void AddMovable(IDrawable drawable)
+        {
+            MapObjs.Add(drawable);
+        }
+
+        public void Draw()   // arg to pozycja bohatera
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    var somethingToDraw = MapObjs.Where(x => x.PositionX == i && x.PositionY == j).FirstOrDefault();//linq
+
+                    if (somethingToDraw != null)
+                        Console.Write(somethingToDraw.Marker);
+                    else
+                        Console.Write(" ");
+                }
+                Console.WriteLine();
             }
         }
     }

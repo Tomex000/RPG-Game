@@ -7,35 +7,44 @@ using System.Threading.Tasks;
 namespace RPG
 {
     class Game
-    {       
-        Hero Deku = new Hero();    
-        Map Lvl1 = new Map();
+    {
+        Hero Deku;
+        Map Lvl1;
+
+        public Game()
+        {
+            Deku = new Hero(4, 4);
+            Lvl1 = new Map();
+
+            Lvl1.AddMovable(Deku);
+        }
+
         public void Play()
         {
             string stop = "a";
-            
-               while (stop != "x")
+            Lvl1.Draw();
+            while (stop != "x")
                {
                 stop = Console.ReadLine();                
 
-                if (stop=="a" || Console.ReadKey().Key != ConsoleKey.LeftArrow) //move left
+                if (stop=="a") //move left
                 {                   
-                    Deku.Moveleft();
+                    Deku.MoveLeft();
                 }
-                if (stop == "w" || Console.ReadKey().Key != ConsoleKey.UpArrow) //move up
+                else if (stop == "w") //move up
                 {                   
                     Deku.MoveUp();
                 }
-                if (stop == "d" || Console.ReadKey().Key != ConsoleKey.RightArrow) //move right
+                else if(stop == "d") //move right
                 {
                     Deku.MoveRight();
                 }
-                if (stop == "s" || Console.ReadKey().Key != ConsoleKey.DownArrow)//move dwon
+                else if(stop == "s")//move dwon
                 {
                     Deku.MoveDown(); 
                 }
                 //rysowanie mapy
-                Lvl1.Draw(Deku.PositionX, Deku.PositionY);
+                Lvl1.Draw();
 
               
                 Console.WriteLine(stop);                

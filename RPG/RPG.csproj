@@ -45,12 +45,17 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Hero.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="IMovable.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
